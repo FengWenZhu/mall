@@ -11,7 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+/**
+ * ClassName: ItemController
+ * Description: 商品信息Controller
+ * Company: Future Tech
+ * @author fwz
+ * @version v1.0.0 2019/6/21 22:00 fwz 文件初始创建
+ */
 @Api(tags = "商品信息Controller")
 @Controller
 @RequestMapping("/item")
