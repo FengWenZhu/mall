@@ -1,0 +1,42 @@
+# MYSQL
+spring:
+  ##数据库连接信息
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.56.102:3306/mall?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    ##以下为druid配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    ##初始化大小，最小，最大
+    initialization: 20
+    minIdle: 30
+    maxActive: 50
+    ##配置获取连接等待超时的时间
+    maxWait: 60000
+    ##配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    ##配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBorrow: true
+    testOnReturn: true
+    ##打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat
+    ##通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+# mybatis
+mybatis:
+  type-aliases-package: cn.com.mapper
+  config-location: classpath:mybatis/SqlMapConfig.xml
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+# 端口
+server:
+  port: 8080
+# 日志
+logging:
+  level:
+    cn.com.mapper: debug
