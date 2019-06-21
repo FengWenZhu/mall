@@ -1,6 +1,8 @@
 package cn.com.pojo;
 
-public class UserKey {
+import java.io.Serializable;
+
+public class UserKey implements Serializable {
     private String host;
 
     private String user;
