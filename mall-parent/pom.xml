@@ -37,6 +37,7 @@
         <quartz.version>2.3.1</quartz.version>
         <springboot.version>2.1.5.RELEASE</springboot.version>
         <fastdfs.version>1.27</fastdfs.version>
+        <io.springfox.version>2.9.2</io.springfox.version>
     </properties>
 
     <dependencyManagement>
@@ -138,6 +139,17 @@
                 <groupId>com.github.sgroschupf</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zk-client.version}</version>
+            </dependency>
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${io.springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${io.springfox.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
