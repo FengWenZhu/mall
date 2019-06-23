@@ -8,7 +8,7 @@ import cn.com.pojo.Item;
  * @author fwz
  * @version v1.0.0 2019/6/20 0:13 fwz 文件初始创建
  */
-public interface IItemService {
+public interface ItemService {
     /**
      * Description：根据主键查询商品信息
      * @Author fwz

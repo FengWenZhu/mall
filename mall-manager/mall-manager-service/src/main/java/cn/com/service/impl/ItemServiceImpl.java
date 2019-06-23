@@ -2,9 +2,9 @@ package cn.com.service.impl;
 
 import cn.com.mapper.ItemMapper;
 import cn.com.pojo.Item;
-import cn.com.service.IItemService;
+import cn.com.service.ItemService;
+import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * ClassName: ItemServiceImpl
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @version v1.0.0 2019/6/20 0:14 fwz 文件初始创建
  */
 @Service
-public class ItemServiceImpl implements IItemService {
+public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemMapper itemMapper;

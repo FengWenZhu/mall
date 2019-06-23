@@ -28,11 +28,32 @@ spring:
     filters: stat
     ##通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
 # mybatis
 mybatis:
   type-aliases-package: cn.com.mapper
   config-location: classpath:mybatis/SqlMapConfig.xml
   mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+
+#dubbo-Provide
+dubbo:
+  application:
+    name: mall-manager
+  registry:
+    address: zookeeper://192.168.56.102:2181
+    timeout: 600000
+  provider:
+    version: 1.0.0
+  protocol:
+    port: 20880
+  scan:
+    base-packages: cn.com.service
+
+
+
+
+
+
 # 端口
 server:
   port: 8080
