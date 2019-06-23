@@ -1,4 +1,4 @@
-# MYSQL
+# mysql
 spring:
   ##数据库连接信息
   datasource:
@@ -35,7 +35,7 @@ mybatis:
   config-location: classpath:mybatis/SqlMapConfig.xml
   mapper-locations: classpath:mybatis/mapper/*Mapper.xml
 
-#dubbo-Provide
+# dubbo-provide
 dubbo:
   application:
     name: mall-manager
@@ -48,11 +48,6 @@ dubbo:
     port: 20880
   scan:
     base-packages: cn.com.service
-
-
-
-
-
 
 # 端口
 server:

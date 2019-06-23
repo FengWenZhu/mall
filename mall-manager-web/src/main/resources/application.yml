@@ -1,4 +1,4 @@
-# MYSQL
+# mysql
 spring:
   ##数据库连接信息
   datasource:
@@ -33,6 +33,17 @@ mybatis:
   type-aliases-package: cn.com.mapper
   config-location: classpath:mybatis/SqlMapConfig.xml
   mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+
+# dubbo-consumer
+dubbo:
+  application:
+    name: mall-manager-web
+    qos-enable: false
+  registry:
+    address: zookeeper://192.168.56.102:2181
+  scan:
+    base-packages: cn.com.service
+
 # 端口
 server:
   port: 8081
