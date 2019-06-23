@@ -1,10 +1,10 @@
 package cn.com.controller;
 
 import cn.com.pojo.Item;
-import cn.com.service.IItemService;
+import cn.com.service.ItemService;
+import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/item")
 public class ItemController {
 
-    @Autowired
-    private IItemService itemService;
+    @Reference(version = "1.0.0")
+    private ItemService itemService;
 
     /**
      * Description：根据主键查询商品信息
