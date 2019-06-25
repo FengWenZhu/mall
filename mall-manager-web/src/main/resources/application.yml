@@ -15,3 +15,9 @@ server:
 logging:
   level:
     cn.com: debug
+
+# 模板配置
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
