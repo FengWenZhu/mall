@@ -1,5 +1,6 @@
 package cn.com.controller;
 
+import cn.com.MallResult;
 import cn.com.pojo.Item;
 import cn.com.service.ItemService;
 import com.alibaba.dubbo.config.annotation.Reference;
@@ -39,5 +40,22 @@ public class ItemController {
     @ResponseBody
     public Item getItemById(@PathVariable Long itemId){
         return itemService.getItemById(itemId);
+    }
+
+    /**
+     * Description：分页查询商品信息
+     * @Author fwz
+     * @param page : 当前页数
+     * @param rows :  每页显示记录数
+     * @return cn.com.MallResult
+     * @throws
+     * @Date 2019/6/24 23:34
+     */
+    @ApiOperation(value = "分页查询商品信息")
+    @GetMapping("/getItemList")
+    @ResponseBody
+    public MallResult getItemList(Integer page, Integer rows){
+        MallResult result = itemService.getItemList(page, rows);
+        return result;
     }
 }

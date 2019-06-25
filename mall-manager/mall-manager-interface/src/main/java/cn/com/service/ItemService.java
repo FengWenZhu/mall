@@ -1,5 +1,6 @@
 package cn.com.service;
 
+import cn.com.MallResult;
 import cn.com.pojo.Item;
 /**
  * ClassName: IItemService
@@ -18,4 +19,14 @@ public interface ItemService {
      * @Date 2019/6/20 0:11
      */
     Item getItemById(long itemId);
+    /**
+     * Description：分页查询商品信息
+     * @Author fwz
+     * @param pageCurrnet : 当前页数
+     * @param rows :  每页显示记录数
+     * @return cn.com.MallResult
+     * @throws
+     * @Date 2019/6/24 23:34
+     */
+    MallResult getItemList(int pageCurrnet, int rows);
 }

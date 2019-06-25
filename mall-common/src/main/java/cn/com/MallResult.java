@@ -14,7 +14,7 @@ public class MallResult implements Serializable {
     /** 总记录数 */
     private Long total;
     /** 渲染数据 */
-    private List data;
+    private List rows;
 
     public Long getTotal() {
         return total;
@@ -24,11 +24,11 @@ public class MallResult implements Serializable {
         this.total = total;
     }
 
-    public List getData() {
-        return data;
+    public List getRows() {
+        return rows;
     }
 
-    public void setData(List data) {
-        this.data = data;
+    public void setRows(List rows) {
+        this.rows = rows;
     }
 }
