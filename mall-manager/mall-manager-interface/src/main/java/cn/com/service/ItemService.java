@@ -1,6 +1,6 @@
 package cn.com.service;
 
-import cn.com.MallResult;
+import cn.com.MallDataGridResult;
 import cn.com.pojo.Item;
 /**
  * ClassName: IItemService
@@ -28,5 +28,15 @@ public interface ItemService {
      * @throws
      * @Date 2019/6/24 23:34
      */
-    MallResult getItemList(int pageCurrnet, int rows);
+    MallDataGridResult getItemList(int pageCurrnet, int rows);
+
+    /**
+     * Description：根据id删除商品信息
+     * @Author fwz
+     * @param ids :  商品主键集合
+     * @return int : 受影响行数
+     * @throws
+     * @Date 2019/6/25 22:15
+     */
+    int deleteByBatch(String ids);
 }

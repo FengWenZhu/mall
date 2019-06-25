@@ -1,6 +1,6 @@
 package cn.com.service.impl;
 
-import cn.com.MallResult;
+import cn.com.MallDataGridResult;
 import cn.com.mapper.ItemMapper;
 import cn.com.pojo.Item;
 import cn.com.pojo.ItemExample;
@@ -9,6 +9,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -50,8 +51,8 @@ public class ItemServiceImpl implements ItemService {
      * @Date 2019/6/24 23:34
      */
     @Override
-    public MallResult getItemList(int pageCurrnet, int rows) {
-        MallResult result = new MallResult();
+    public MallDataGridResult getItemList(int pageCurrnet, int rows) {
+        MallDataGridResult result = new MallDataGridResult();
         //设置分页信息
         PageHelper.startPage(pageCurrnet,rows);
         //执行查询
@@ -65,5 +66,23 @@ public class ItemServiceImpl implements ItemService {
         result.setRows(list);
         result.setTotal(total);
         return result;
+    }
+
+    /**
+     * Description：根据id删除商品信息
+     * @Author fwz
+     * @param ids :  商品主键集合
+     * @return int : 受影响行数
+     * @throws
+     * @Date 2019/6/25 22:15
+     */
+    @Override
+    @Transactional
+    public int deleteByBatch(String ids) {
+        //得到id的数据集
+        String[] id = ids.split(",");
+        //返回受影响行数
+        int row = itemMapper.deleteByBatch(id);
+        return row;
     }
 }

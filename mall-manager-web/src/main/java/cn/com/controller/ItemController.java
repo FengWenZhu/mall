@@ -1,5 +1,6 @@
 package cn.com.controller;
 
+import cn.com.MallDataGridResult;
 import cn.com.MallResult;
 import cn.com.pojo.Item;
 import cn.com.service.ItemService;
@@ -7,10 +8,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * ClassName: ItemController
@@ -54,8 +52,29 @@ public class ItemController {
     @ApiOperation(value = "分页查询商品信息")
     @GetMapping("/getItemList")
     @ResponseBody
-    public MallResult getItemList(Integer page, Integer rows){
-        MallResult result = itemService.getItemList(page, rows);
+    public MallDataGridResult getItemList(Integer page, Integer rows){
+        MallDataGridResult result = itemService.getItemList(page, rows);
+        return result;
+    }
+
+    /**
+     * Description：根据id删除商品信息
+     * @Author fwz
+     * @param ids :  商品主键集合
+     * @return int : 受影响行数
+     * @throws
+     * @Date 2019/6/25 22:15
+     */
+    @ApiOperation(value = "批量删除商品信息")
+    @RequestMapping(value = "/deleteByBatch" , method = RequestMethod.POST)
+    @ResponseBody
+    public MallResult deleteByBatch(@RequestParam String ids){
+        MallResult result = new MallResult();
+        int row = itemService.deleteByBatch(ids);
+        if(row >= 1){
+            result.setStatus(200);
+            result.setMsg("删除成功");
+        }
         return result;
     }
 }
