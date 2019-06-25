@@ -10,7 +10,7 @@ import java.util.List;
  * @author fwz
  * @version v1.0.0 2019/6/25 0:26 fwz 文件初始创建
  */
-public class MallResult implements Serializable {
+public class MallDataGridResult implements Serializable {
     /** 总记录数 */
     private Long total;
     /** 渲染数据 */
