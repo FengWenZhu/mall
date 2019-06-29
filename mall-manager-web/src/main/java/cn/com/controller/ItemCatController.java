@@ -1,6 +1,6 @@
 package cn.com.controller;
 
-import cn.com.EasyUiTreeNode;
+import cn.com.pojo.EasyUiTreeNode;
 import cn.com.service.ItemCatService;
 import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;

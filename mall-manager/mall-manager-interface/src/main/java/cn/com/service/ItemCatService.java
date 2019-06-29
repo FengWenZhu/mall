@@ -1,6 +1,6 @@
 package cn.com.service;
 
-import cn.com.EasyUiTreeNode;
+import cn.com.pojo.EasyUiTreeNode;
 
 import java.util.List;
 

@@ -1,7 +1,8 @@
 package cn.com.service;
 
-import cn.com.MallDataGridResult;
 import cn.com.pojo.Item;
+import cn.com.pojo.MallDataGridResult;
+
 /**
  * ClassName: ItemService
  * Description: 商品信息接口

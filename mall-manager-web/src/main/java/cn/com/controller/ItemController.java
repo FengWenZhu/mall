@@ -1,8 +1,8 @@
 package cn.com.controller;
 
-import cn.com.MallDataGridResult;
-import cn.com.MallResult;
 import cn.com.pojo.Item;
+import cn.com.pojo.MallDataGridResult;
+import cn.com.pojo.MallResult;
 import cn.com.service.ItemService;
 import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;

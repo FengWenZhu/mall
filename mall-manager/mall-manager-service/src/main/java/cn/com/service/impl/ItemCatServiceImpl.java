@@ -1,7 +1,7 @@
 package cn.com.service.impl;
 
-import cn.com.EasyUiTreeNode;
 import cn.com.mapper.ItemCatMapper;
+import cn.com.pojo.EasyUiTreeNode;
 import cn.com.pojo.ItemCat;
 import cn.com.pojo.ItemCatExample;
 import cn.com.service.ItemCatService;
