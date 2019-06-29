@@ -11,6 +11,7 @@ dubbo:
 # 端口
 server:
   port: 8081
+
 # 日志
 logging:
   level:

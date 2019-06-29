@@ -3,7 +3,7 @@ package cn.com.service;
 import cn.com.MallDataGridResult;
 import cn.com.pojo.Item;
 /**
- * ClassName: IItemService
+ * ClassName: ItemService
  * Description: 商品信息接口
  * Company: Future Tech
  * @author fwz
