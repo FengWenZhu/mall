@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/item")
 public class ItemController {
 
-    @Reference(version = "1.0.0")
+    @Reference
     private ItemService itemService;
 
     /**

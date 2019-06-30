@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/itemCat")
 public class ItemCatController {
 
-    @Reference(version = "1.0.0")
+    @Reference
     private ItemCatService itemCatService;
 
     /**
