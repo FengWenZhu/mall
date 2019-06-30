@@ -20,7 +20,7 @@ public interface ItemService {
      * @throws
      * @Date 2019/6/20 0:11
      */
-    Item getItemById(long itemId);
+    Item getItemById(Long itemId);
     /**
      * Description：分页查询商品信息
      * @Author fwz

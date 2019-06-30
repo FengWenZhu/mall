@@ -39,7 +39,7 @@ public class ItemServiceImpl implements ItemService {
      * @Date 2019/6/20 0:11
      */
     @Override
-    public Item getItemById(long itemId) {
+    public Item getItemById(Long itemId) {
         //根据主键查询商品信息
         Item item = itemMapper.selectByPrimaryKey(itemId);
         return item;
