@@ -311,4 +311,20 @@
       #{id}
     </foreach>
   </delete>
+
+  <update id="instockByBatch" parameterType="string">
+    update item set status = 2
+    where id in
+    <foreach collection="id" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </update>
+
+  <update id="reshelfByBatch" parameterType="string">
+    update item set status = 1
+    where id in
+    <foreach collection="id" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </update>
 </mapper>

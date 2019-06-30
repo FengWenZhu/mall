@@ -51,4 +51,18 @@ public class ItemCatServiceImpl implements ItemCatService {
         }
         return result;
     }
+
+    /**
+     * Description：根据商品类目id查询商品类目信息
+     * @Author fwz
+     * @param id : 商品类目id
+     * @return cn.com.pojo.ItemCat
+     * @throws
+     * @Date 2019/6/30 15:34
+     */
+    @Override
+    public ItemCat getItemCatById(Long id) {
+        ItemCat itemCat = itemCatMapper.selectByPrimaryKey(id);
+        return itemCat;
+    }
 }

@@ -32,4 +32,7 @@ public interface ItemMapper {
 
     int deleteByBatch(@Param("id") String[] id);
 
+    int instockByBatch(@Param("id") String[] id);
+
+    int reshelfByBatch(@Param("id") String[] id);
 }

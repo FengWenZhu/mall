@@ -2,6 +2,7 @@ package cn.com.service;
 
 import cn.com.pojo.Item;
 import cn.com.pojo.MallDataGridResult;
+import cn.com.pojo.MallResult;
 
 /**
  * ClassName: ItemService
@@ -40,4 +41,46 @@ public interface ItemService {
      * @Date 2019/6/25 22:15
      */
     int deleteByBatch(String ids);
+
+    /**
+     * Description：新增商品信息
+     * @Author fwz
+     * @param item : 商品信息
+     * @param desc : 商品描述
+     * @return cn.com.pojo.MallResult
+     * @throws
+     * @Date 2019/6/30 13:34
+     */
+    MallResult addItem(Item item , String desc);
+
+    /**
+     * Description：更新商品信息
+     * @Author fwz
+     * @param item : 商品信息
+     * @param desc : 商品描述
+     * @return cn.com.pojo.MallResult
+     * @throws
+     * @Date 2019/6/30 18:41
+     */
+    MallResult updateItem(Item item , String desc);
+
+    /**
+     * Description：根据id下架商品
+     * @Author fwz
+     * @param ids : 商品主键集合
+     * @return int
+     * @throws
+     * @Date 2019/6/30 19:07
+     */
+    int instockByBatch(String ids);
+
+    /**
+     * Description：根据id上架商品
+     * @Author fwz
+     * @param ids : 商品主键集合
+     * @return int
+     * @throws
+     * @Date 2019/6/30 19:36
+     */
+    int reshelfByBatch(String ids);
 }
