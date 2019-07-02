@@ -38,6 +38,7 @@ mybatis:
 # dubbo-provide
 dubbo:
   application:
+    id: mall-manager
     name: mall-manager
   registry:
     address: zookeeper://192.168.56.102:2181
