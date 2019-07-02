@@ -47,10 +47,6 @@ dubbo:
   scan:
     base-packages: cn.com.service
 
-# 端口
-server:
-  port: 8080
-# 日志
 logging:
   level:
     cn.com.mapper: debug
