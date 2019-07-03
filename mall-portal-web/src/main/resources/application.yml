@@ -6,7 +6,7 @@ dubbo:
   registry:
     address: zookeeper://192.168.56.102:2181
   scan:
-    base-packages: cn.com.service
+    base-packages: cn.com.controller
 
 # 端口
 server:
