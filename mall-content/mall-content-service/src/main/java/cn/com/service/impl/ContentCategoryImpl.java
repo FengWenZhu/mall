@@ -34,12 +34,16 @@ public class ContentCategoryImpl implements ContentCategoryService {
      */
     @Override
     public List<EasyUiTreeNode> getTree(Long parentId) {
-        //创建返回对象list，封装返回数据
+        //创建返回对象list，存放返回数据
         List<EasyUiTreeNode> result = new ArrayList<>();
+        //根据parentId查询子节点列表
         ContentCategoryExample example = new ContentCategoryExample();
         ContentCategoryExample.Criteria criteria = example.createCriteria();
+        //设置查询条件
         criteria.andParentIdEqualTo(parentId);
+        //执行查询
         List<ContentCategory> list = contentCategoryMapper.selectByExample(example);
+        //封装返回的数据
         for (ContentCategory contentCategory : list){
             EasyUiTreeNode node = new EasyUiTreeNode();
             node.setId(contentCategory.getId());
