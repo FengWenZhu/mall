@@ -11,11 +11,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.com</groupId>
-    <artifactId>mall-manager-web</artifactId>
+    <artifactId>mall-portal-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>mall-manager-web</name>
+    <name>mall-portal-web</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,18 +24,6 @@
     </properties>
 
     <dependencies>
-        <!-- 添加mall-manager-service依赖 -->
-        <dependency>
-            <groupId>cn.com</groupId>
-            <artifactId>mall-manager-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <!-- 添加mall-content-interface依赖 -->
-        <dependency>
-            <groupId>cn.com</groupId>
-            <artifactId>mall-content-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <!--springboot的web组件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,12 +39,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        <!--热部署依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
         </dependency>
         <!--dubbo-->
         <dependency>
@@ -88,7 +70,7 @@
     </dependencies>
 
     <build>
-        <finalName>mall-manager-web</finalName>
+        <finalName>e3-portal-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -96,6 +78,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

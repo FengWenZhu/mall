@@ -1,16 +1,16 @@
 # dubbo-consumer
 dubbo:
   application:
-    name: mall-manager-web
+    name: mall-portal-web
     qos-enable: false
   registry:
     address: zookeeper://192.168.56.102:2181
   scan:
-    base-packages: cn.com.controller
+    base-packages: cn.com.service
 
 # 端口
 server:
-  port: 8081
+  port: 8082
 
 # 日志
 logging:
