@@ -5,6 +5,7 @@ import cn.com.mapper.ItemMapper;
 import cn.com.pojo.*;
 import cn.com.service.ItemService;
 import cn.com.utils.IDUtils;
+import cn.com.utils.SnowflakeIdWorker;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -103,7 +104,7 @@ public class ItemServiceImpl implements ItemService {
     @Transactional
     public MallResult addItem(Item item, String desc) {
         //生成商品ID
-        long itemId = IDUtils.getItemId();
+        Long itemId = Long.valueOf(SnowflakeIdWorker.getId());
         //补全item属性
         item.setId(itemId);
         //1-正常，2-下架，3-删除

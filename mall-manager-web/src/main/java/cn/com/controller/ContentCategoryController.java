@@ -31,10 +31,10 @@ public class ContentCategoryController {
     * @return java.util.List<cn.com.pojo.EasyUiTreeNode>
     */
     @ApiOperation(value = "据父节点id得到内容分类的tree结构")
-    @RequestMapping(value = "/getTree" , method = RequestMethod.GET)
+    @RequestMapping(value = "/getContentCategoryTree" , method = RequestMethod.GET)
     @ResponseBody
-    public List<EasyUiTreeNode> getTree(@RequestParam(value = "id" , defaultValue = "0") Long parentId){
-        List<EasyUiTreeNode> result = contentCategoryService.getTree(parentId);
+    public List<EasyUiTreeNode> getContentCategoryTree(@RequestParam(value = "id" , defaultValue = "0") Long parentId){
+        List<EasyUiTreeNode> result = contentCategoryService.getContentCategoryTree(parentId);
         return result;
     }
 }

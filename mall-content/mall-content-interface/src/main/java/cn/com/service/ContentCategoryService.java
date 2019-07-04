@@ -21,5 +21,5 @@ public interface ContentCategoryService {
      * @throws
      * @Date 2019/7/2 21:52
      */
-    List<EasyUiTreeNode> getTree(Long parentId);
+    List<EasyUiTreeNode> getContentCategoryTree(Long parentId);
 }

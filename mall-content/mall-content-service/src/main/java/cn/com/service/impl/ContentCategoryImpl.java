@@ -33,7 +33,7 @@ public class ContentCategoryImpl implements ContentCategoryService {
      * @Date 2019/7/2 21:52
      */
     @Override
-    public List<EasyUiTreeNode> getTree(Long parentId) {
+    public List<EasyUiTreeNode> getContentCategoryTree(Long parentId) {
         //创建返回对象list，存放返回数据
         List<EasyUiTreeNode> result = new ArrayList<>();
         //根据parentId查询子节点列表
