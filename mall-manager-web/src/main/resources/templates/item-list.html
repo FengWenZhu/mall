@@ -35,7 +35,10 @@
         text:'新增',
         iconCls:'icon-add',
         handler:function(){
-        	$(".tree-title:contains('新增商品')").parent().click();
+        	/*$(".tree-title:contains('新增商品')").parent().click();*/
+            E3.createWindow({
+                url : "/item-add"
+            });
         }
     },{
         text:'编辑',

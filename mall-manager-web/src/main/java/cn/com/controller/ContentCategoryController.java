@@ -70,4 +70,12 @@ public class ContentCategoryController {
         MallResult result = contentCategoryService.updateContentCategory(id, name);
         return result;
     }
+
+    @ApiOperation(value = "删除当前节点")
+    @RequestMapping(value = "/deleteContentCategory" , method = RequestMethod.POST)
+    @ResponseBody
+    public MallResult deleteContentCategory(Long id){
+        MallResult result = contentCategoryService.deleteContentCategory(id);
+        return result;
+    }
 }

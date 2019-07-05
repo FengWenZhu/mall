@@ -43,4 +43,13 @@ public interface ContentCategoryService {
      * @return cn.com.pojo.MallResult
      */
     MallResult updateContentCategory(Long id , String name);
+
+    /**
+     * @Description: 删除当前节点
+     * @param id: 节点id
+     * @author fwz
+     * @date 2019/7/5 20:56
+     * @return cn.com.pojo.MallResult
+     */
+    MallResult deleteContentCategory(Long id);
 }

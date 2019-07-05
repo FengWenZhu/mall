@@ -89,7 +89,7 @@ public class ContentCategoryImpl implements ContentCategoryService {
         int row = contentCategoryMapper.insert(contentCategory);
         //新增时需判断父节点的isParent属性，如果为false，则更改为true
         ContentCategory category = contentCategoryMapper.selectByPrimaryKey(parentId);
-        if(category.getIsParent() == Boolean.FALSE){
+        if(category.getIsParent().equals(Boolean.FALSE)){
             category.setIsParent(Boolean.TRUE);
             category.setUpdated(date);
             //更新父节点数据的isParent字段以及更新时间
@@ -133,6 +133,56 @@ public class ContentCategoryImpl implements ContentCategoryService {
         if(row >= 1){
             result.setStatus(200);
             result.setMsg("内容分类管理节点重命名成功");
+        }
+        return result;
+    }
+
+    /**
+     * @Description: 删除当前节点
+     * @param id: 节点id
+     * @author fwz
+     * @date 2019/7/5 20:56
+     * @return cn.com.pojo.MallResult
+     */
+    @Override
+    @Transactional
+    public MallResult deleteContentCategory(Long id) {
+        //封装返回信息
+        MallResult result = new MallResult();
+        //根据主键查询内容分类信息
+        ContentCategory contentCategory = contentCategoryMapper.selectByPrimaryKey(id);
+        //如果此节点非叶子节点，则不可删除
+        if(contentCategory.getIsParent()){
+            result.setStatus(4001);
+            result.setMsg("非叶子节点不可删除");
+            return result;
+        }
+        //删除受影响的行
+        int deleteRow = contentCategoryMapper.deleteByPrimaryKey(id);
+        //删除当前节点后，判断父节点是否还有孩子，如果没有，则更改父节点的isParent状态
+        //封装查询信息
+        ContentCategoryExample example = new ContentCategoryExample();
+        ContentCategoryExample.Criteria criteria = example.createCriteria();
+        //设置查询条件
+        criteria.andParentIdEqualTo(contentCategory.getParentId());
+        //执行查询
+        List<ContentCategory> list = contentCategoryMapper.selectByExample(example);
+        //如果list为空，则没有孩子节点，修改当前节点为叶子节点
+        if(list.isEmpty()){
+            //封装更新对象信息
+            ContentCategory category = new ContentCategory();
+            category.setId(contentCategory.getParentId());
+            category.setIsParent(Boolean.FALSE);
+            //获取系统时间
+            Date date = new Date();
+            category.setUpdated(date);
+            //执行更新,返回受影响的行
+           contentCategoryMapper.updateByPrimaryKeySelective(category);
+        }
+
+        if(deleteRow >=1){
+           result.setStatus(200);
+           result.setMsg("该节点删除成功");
         }
         return result;
     }
