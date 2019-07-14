@@ -38,6 +38,7 @@
         <springboot.version>2.1.5.RELEASE</springboot.version>
         <fastdfs.version>1.27</fastdfs.version>
         <io.springfox.version>2.9.2</io.springfox.version>
+        <easypoi.version>4.0.0</easypoi.version>
     </properties>
 
     <dependencyManagement>
@@ -150,6 +151,22 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${io.springfox.version}</version>
+            </dependency>
+            <!-- 导入导出模块 -->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-base</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-web</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-annotation</artifactId>
+                <version>${easypoi.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
